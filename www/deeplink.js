@@ -174,30 +174,7 @@ var IonicDeeplink = {
    */
   _getRealPath: function(data) {
     // If we have a fragment, we use that as the path
-    if(data.fragment) {
-      var fi = data.fragment.indexOf('?');
-      if(fi > -1) {
-        return data.fragment.slice(0, fi).slice(1);
-      }
-      return data.fragment.slice(1);
-    }
-
-    if(!data.path) {
-      if(data.host.charAt(0) != '/') data.host = '/' + data.host;
-      return data.host;
-    }
-
-    var restOfUrl = data.url.slice(data.url.indexOf(data.host) + data.host.length);
-
-    if(restOfUrl.indexOf('?') > -1) {
-      restOfUrl = restOfUrl.slice(0, restOfUrl.indexOf('?'));
-    }
-
-    if(restOfUrl.indexOf('#') > -1) {
-      restOfUrl = restOfUrl.slice(0)
-    }
-
-    return restOfUrl;
+    return data.host + data.path;
   },
 
   onDeepLink: function(callback) {
