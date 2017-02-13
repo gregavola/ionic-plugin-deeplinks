@@ -1,3 +1,5 @@
+FORKED TO REMOVE appname://app prefix, and works with handling of appname://path/to/location. This fork doesn't include the Universal Links.
+
 Ionic Deeplinks Plugin
 ======
 
